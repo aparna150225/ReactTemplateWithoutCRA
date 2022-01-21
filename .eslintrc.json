@@ -1,0 +1,162 @@
+{
+    "extends": [
+        "airbnb",
+        "plugin:flowtype/recommended"
+    ],
+    "plugins": [
+        "flowtype",
+        "prettier"
+    ],
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
+    },
+    "rules": {
+        "linebreak-style": 0,
+        "no-unused-vars": [
+            2,
+            {
+                "vars": "all",
+                "args": "after-used",
+                "ignoreRestSiblings": false,
+                "argsIgnorePattern": "^prevProps"
+            }
+        ],
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx"
+                ]
+            }
+        ],
+        "react/jsx-one-expression-per-line": [
+            0
+        ],
+        "flowtype/boolean-style": [
+            2,
+            "boolean"
+        ],
+        "flowtype/define-flow-type": 1,
+        "flowtype/generic-spacing": [
+            2,
+            "never"
+        ],
+        "flowtype/no-primitive-constructor-types": 2,
+        "flowtype/no-weak-types": 0,
+        "flowtype/object-type-delimiter": [
+            2,
+            "comma"
+        ],
+        "flowtype/require-valid-file-annotation": 2,
+        "flowtype/semi": [
+            2,
+            "always"
+        ],
+        "flowtype/space-after-type-colon": [
+            2,
+            "always"
+        ],
+        "flowtype/space-before-generic-bracket": [
+            2,
+            "never"
+        ],
+        "flowtype/space-before-type-colon": [
+            2,
+            "never"
+        ],
+        "flowtype/union-intersection-spacing": [
+            2,
+            "always"
+        ],
+        "flowtype/use-flow-type": 1,
+        "flowtype/valid-syntax": 1,
+        "flowtype/no-types-missing-file-annotation": 2,
+        "no-console": 1,
+        "prettier/prettier": 0,
+        "no-func-assign": 0,
+        "comma-dangle": [
+            2,
+            "never"
+        ],
+        "no-eval": 0,
+        "max-len": [
+            "error",
+            {
+                "code": 140,
+                "ignoreComments": true,
+                "ignoreStrings": true
+            }
+        ],
+        "react/destructuring-assignment": 0,
+        "prefer-destructuring": 0,
+        "react/prop-types": [
+            2,
+            {
+                "ignore": [
+                    // "changeCurrentPage",
+                    // "fetchRefData",
+                    // "fetchMetadata",
+                    // "updateUserData",
+                    // "refData",
+                    // "metadata"
+                ]
+            }
+        ],
+        "camelcase": [
+            2,
+            {
+                "properties": "never"
+            }
+        ],
+        "import/prefer-default-export": 1,
+        "no-param-reassign": [
+            2,
+            {
+                "props": false
+            }
+        ],
+        "no-script-url": 1,
+        "import/no-dynamic-require": 0,
+        "react/no-array-index-key": 1,
+        "jsx-a11y/tabindex-no-positive": 0,
+        "no-restricted-syntax": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "react/no-unused-prop-types": 1,
+        "react/no-unused-state": 1,
+        "jsx-a11y/anchor-is-valid": 1,
+        "no-case-declarations": 0
+    },
+    "env": {
+        "es6": true,
+        "jest": true,
+        "browser": true,
+        "node": true
+    },
+    "settings": {
+        "import/resolver": {
+            "webpack": {
+                "config": "webpack-prod.config.js"
+            }
+        }
+    },
+    "globals": {
+        // "BRAND": "ybs",
+        // "CONFIG": {},
+        // "CONTENT": {},
+        // "THEME": {},
+        // "theme": "ybs",
+        "process": {
+            "env": {
+                // "brand": "ybs"
+            }
+        }
+    }
+}

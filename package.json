@@ -1,0 +1,140 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode production --config webpack-prod.config.js",
+    "build:stats": "webpack --mode production --config webpack-prod.config.js --json > stats.json",
+    "debug": "npm-run-all --parallel debug:watch test:watch",
+    "dev": "webpack-dev-server --mode development --config webpack-dev.config.js --open",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "start": "npm-run-all --parallel test:watch dev",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "format": "prettier --write ./{src,config}/**/*.{ts,js,css,json}"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false,
+    "http": false,
+    "child_process": false
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "report.xml",
+    "sonar76x": true
+  },
+  "jest": {
+    "collectCoverage": true,
+    "testResultsProcessor": "jest-sonar-reporter",
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/js/setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "<rootDir>/cypress/"
+    ],
+    "collectCoverageFrom": [
+      "src/js/**/*.js"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "json",
+      "html"
+    ],
+    "setupFiles": [
+      "<rootDir>/globalSetupTest.js"
+    ],
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|svg|ico)$": "<rootDir>/mock-style.js",
+      "\\.(css|less)$": "<rootDir>/mock-style.js"
+    },
+    "transform": {
+      "^.+\\.(js|jsx)$": "babel-jest"
+    },
+    "coverageThreshold": {
+      "global": {
+        "branches": 77,
+        "functions": 79,
+        "lines": 85,
+        "statements": 84
+      }
+    },
+    "testURL": "http://localhost"
+  },
+  "dependencies": {
+    "-": "0.0.1",
+    "axios": "0.18.1",
+    "babel-polyfill": "6.26.0",
+    "bootstrap": "4.3.1",
+    "classnames": "2.2.6",
+    "clean": "^4.0.2",
+    "es6-promise": "4.2.8",
+    "history": "4.10.1",
+    "install": "^0.13.0",
+    "lodash": "4.17.15",
+    "moment": "2.24.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-app-polyfill": "0.2.2",
+    "react-bootstrap": "0.32.4",
+    "react-dom": "16.11.0",
+    "react-router-dom": "5.1.2",
+    "react-transition-group": "2.9.0",
+    "scripts": "^0.1.0",
+    "styled-components": "~4.2.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.7.0",
+    "@babel/core": "7.7.0",
+    "@babel/plugin-proposal-class-properties": "7.7.0",
+    "@babel/plugin-transform-runtime": "7.6.2",
+    "@babel/preset-env": "7.7.1",
+    "@babel/preset-flow": "7.0.0",
+    "@babel/preset-react": "7.7.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.3",
+    "babel-jest": "24.9.0",
+    "babel-loader": "8.0.6",
+    "babel-plugin-istanbul": "^6.1.1",
+    "babel-plugin-styled-components": "1.10.6",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "2.1.1",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.15.1",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.1",
+    "eslint-formatter-friendly": "6.0.0",
+    "eslint-import-resolver-webpack": "0.11.1",
+    "eslint-loader": "2.2.1",
+    "eslint-plugin-flow": "2.29.1",
+    "eslint-plugin-flowtype": "3.13.0",
+    "eslint-plugin-import": "2.18.2",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-prettier": "3.1.1",
+    "eslint-plugin-react": "7.16.0",
+    "file-loader": "3.0.1",
+    "flow-bin": "0.96.0",
+    "flow-typed": "2.6.2",
+    "jest": "^24.9.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "mini-css-extract-plugin": "0.6.0",
+    "npm-run-all": "4.1.5",
+    "prettier": "1.18.2",
+    "react-test-renderer": "16.11.0",
+    "sinon": "7.5.0",
+    "style-loader": "0.23.1",
+    "webpack": "4.41.2",
+    "webpack-bundle-analyzer": "3.6.0",
+    "webpack-cli": "3.3.10",
+    "webpack-dev-server": "3.9.0"
+  }
+}

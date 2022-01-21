@@ -1,0 +1,1 @@
+// File to setup global variables
