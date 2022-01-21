@@ -1,2 +1,2 @@
-# react-template
+# ReactWithoutRedux
 Custom react template with webpack and babel
